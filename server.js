@@ -33,7 +33,7 @@ router.post(credential.router.tosip, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var sipThreadID = credential.threadID.sip;
   var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
@@ -48,7 +48,7 @@ router.post(credential.router.tolab, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var labThreadID = credential.threadID.lab;
   var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
@@ -63,7 +63,7 @@ router.post(credential.router.toall, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var allThreadID = credential.threadID.toall;
   var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
@@ -78,7 +78,7 @@ router.post(credential.router.totest, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var allThreadID = credential.threadID.totest;
   var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
