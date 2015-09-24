@@ -1,0 +1,13 @@
+{
+  "name": "slack-to-fb chatbot",
+  "version": "0.0.1",
+  "description": "slack-to-fb chat bot",
+  "main": "server.js",
+  "repository": "",
+  "author": "",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "express": "~3.2.4",
+    "facebook-chat-api": "^0.2.11"
+  }
+}
