@@ -1,5 +1,5 @@
 {
-  "name": "slack-to-fb chatbot",
+  "name": "slack-to-fb-chatbot",
   "version": "0.0.1",
   "description": "slack-to-fb chat bot",
   "main": "server.js",

@@ -15,10 +15,10 @@ server.listen(process.env.PORT || 8000, process.env.IP || '0.0.0.0', function() 
 });
 
 router.use(bodyParser.urlencoded());
-var config = require('./credential');
+var credential = require('./credential');
 var apiInstance;
 
-login({email: config.account.id, password: config.account.pwd}, function(err, api) {
+login({email: credential.account.id, password: credential.account.pwd}, function(err, api) {
   if (err) {
     return console.error(err);
   }
@@ -41,7 +41,7 @@ router.post(credential.router.tosip, function(req, res) {
   }
 });
 
-router.post(credential.router.lab, function(req, res) {
+router.post(credential.router.tolab, function(req, res) {
   var slackBody = req.body;
   var user = slackBody.user_name;
   var text = slackBody.text;
