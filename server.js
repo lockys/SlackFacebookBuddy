@@ -17,6 +17,7 @@ server.listen(process.env.PORT || 8000, process.env.IP || '0.0.0.0', function() 
 router.use(bodyParser.urlencoded());
 var credential = require('./credential');
 var apiInstance;
+var delimeter = 'fb=';
 
 login({email: credential.account.id, password: credential.account.pwd}, function(err, api) {
   if (err) {
@@ -32,9 +33,9 @@ router.post(credential.router.tosip, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var sipThreadID = credential.threadID.sip;
-  var msg = {body: user + ' 說: ' + text};
+  var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
   if (user !== 'slackbot') {
     apiInstance.sendMessage(msg, sipThreadID);
@@ -47,9 +48,9 @@ router.post(credential.router.tolab, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var labThreadID = credential.threadID.lab;
-  var msg = {body: user + ' 說: ' + text};
+  var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
   if (user !== 'slackbot') {
     apiInstance.sendMessage(msg, labThreadID);
@@ -62,9 +63,9 @@ router.post(credential.router.toall, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
+  user = credential.nameList[user] || user;
   var allThreadID = credential.threadID.toall;
-  var msg = {body: user + ' 說: ' + text};
+  var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
   if (user !== 'slackbot') {
     apiInstance.sendMessage(msg, allThreadID);
@@ -77,9 +78,9 @@ router.post(credential.router.totest, function(req, res) {
   var text = slackBody.text;
 
   console.log(user, text);
-
-  var allThreadID = credential.threadID.toall;
-  var msg = {body: user + ' 說: ' + text};
+  user = credential.nameList[user] || user;
+  var allThreadID = credential.threadID.totest;
+  var msg = {body: user + ' 說: ' + text.replace(delimeter , '')};
 
   if (user !== 'slackbot') {
     apiInstance.sendMessage(msg, allThreadID);
