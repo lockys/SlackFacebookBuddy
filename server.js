@@ -70,3 +70,18 @@ router.post(credential.router.toall, function(req, res) {
     apiInstance.sendMessage(msg, allThreadID);
   }
 });
+
+router.post(credential.router.totest, function(req, res) {
+  var slackBody = req.body;
+  var user = slackBody.user_name;
+  var text = slackBody.text;
+
+  console.log(user, text);
+
+  var allThreadID = credential.threadID.toall;
+  var msg = {body: user + ' 說: ' + text};
+
+  if (user !== 'slackbot') {
+    apiInstance.sendMessage(msg, allThreadID);
+  }
+});
