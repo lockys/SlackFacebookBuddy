@@ -1,7 +1,3 @@
-slackbot
-==
-credential.js example
-```javascript
 module.exports = {
   account: {id: 'facebook-account', pwd: 'password',},
   router: {yourPath: '/yourPath'},
@@ -10,4 +6,3 @@ module.exports = {
     'slackbot': '機器人',
   },
 };
-```
