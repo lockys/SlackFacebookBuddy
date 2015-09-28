@@ -8,6 +8,8 @@ pm2.connect(function(err) {
     throw new Error('pm2 connect error.');
   }
 
+  startInstance();
+
   // Re-start the instance every 30 minutes.
   setTimeout(startInstance, TIME);
 
@@ -19,4 +21,6 @@ function startInstance() {
       throw new Error('Start Error');
     }
   });
+
+  setTimeout(startInstance, TIME);
 }
