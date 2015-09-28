@@ -12,7 +12,7 @@ pm2.connect(function(err) {
 });
 
 function restartInstance() {
-  pm2.reload('slackbot', function(err, proc) {
+  pm2.restart('slack-to-facebook', function(err, proc) {
     if (err) {
       throw new Error('Restart Error');
     }
