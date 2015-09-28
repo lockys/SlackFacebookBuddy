@@ -2,21 +2,22 @@
 Author: Hao-Wei Jeng
 **/
 var pm2 = require('pm2');
-var TIME = 1800000;
+var TIME = 3800000;
 pm2.connect(function(err) {
   if (err) {
     throw new Error('pm2 connect error.');
   }
-
   // Re-start the instance every 30 minutes.
-  setTimeout(startInstance, TIME);
-
+  restartInstance();
 });
 
-function startInstance() {
-  pm2.start('server.js', { name: 'slackbot' }, function(err, proc) {
+function restartInstance() {
+  pm2.reload('slackbot', function(err, proc) {
     if (err) {
-      throw new Error('Start Error');
+      throw new Error('Restart Error');
     }
+
+    console.log('Restart!');
+    setTimeout(restartInstance, TIME);
   });
 }
