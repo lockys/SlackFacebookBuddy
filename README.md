@@ -1,5 +1,9 @@
 slackbot
 ==
+What is this?
+==
+A program that can transmit messenges of slack to Facebook.
+
 credential.js example
 ```javascript
 module.exports = {
