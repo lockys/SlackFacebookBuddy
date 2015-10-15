@@ -6,8 +6,8 @@ You can run this on `c9.io`
 ##Getting started
 **Configure channel of Slack**  
 1. Register a new facebook account as robot.   
-2. create a facebook chatroom and add robot to this chatroom, get `thread_id` on the url.  
-3. set outgoing webhook with trigger word `fb=` and your server's `post url` in your channel  
+2. Create a facebook chatroom and add robot to this chatroom, get `thread_id` on the url.  
+3. Set outgoing webhook with trigger word `fb=` and your server's `post url` in your channel  
 An example of `post url`:
 `http://example.io/toAll`
 
@@ -30,9 +30,9 @@ module.exports = {
   },
 };
 ```
-`account` your robot's account and password.    
-`router` specify router so that slack could post request to your `post url`.    
-`threadID` every chatroom will have a thread id.  
+`account` Your robot's account and password.    
+`router` Specify router so that slack could post request to your `post url`.    
+`threadID` Every chatroom will have a thread id.  
 `nameList` A slack-id to facebook name mapping so that people in chatroom could know who is talking.
 
 **An example of router**
