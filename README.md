@@ -1,7 +1,7 @@
 What is this?
 ==
 A program that can transmit messenges of slack to Facebook.  
-You can run this on `c9.io`
+You can run this on [`c9.io`](c9.io)
 
 ##Getting started
 **Configure channel of Slack**  
