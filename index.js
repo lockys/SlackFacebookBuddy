@@ -36,11 +36,11 @@ router.post(credential.router.toAll, function(req, res) {
 
   console.log(user, text);
   user = credential.nameList[user] || user;
-  var allGroupThreadID = credential.threadID.allGroup;
+  var groupThreadID = credential.threadID.allGroup;
   var msg = {body: user + ' says: ' + text.replace(delimeter , '')};
 
   if (user !== 'slackbot') {
-    apiInstance.sendMessage(msg, allGroupThreadID);
+    apiInstance.sendMessage(msg, groupThreadID);
   }
 });
 
@@ -51,10 +51,10 @@ router.post(credential.router.toOffice, function(req, res) {
 
   console.log(user, text);
   user = credential.nameList[user] || user;
-  var officeGroupThreadID = credential.threadID.officeGroup;
+  var groupThreadID = credential.threadID.officeGroup;
   var msg = {body: user + ' says: ' + text.replace(delimeter , '')};
 
   if (user !== 'slackbot') {
-    apiInstance.sendMessage(msg, officeGroupThreadID);
+    apiInstance.sendMessage(msg, groupThreadID);
   }
 });
