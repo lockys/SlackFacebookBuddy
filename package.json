@@ -1,10 +1,10 @@
 {
   "name": "slack-to-fb-chatbot",
   "version": "0.0.1",
-  "description": "slack-to-fb chat bot",
-  "main": "server.js",
-  "repository": "",
-  "author": "",
+  "description": "slack-to-fb bot",
+  "main": "index.js",
+  "repository": "https://github.com/lockys/slack-to-facebook-bot",
+  "author": "Calvin Jeng",
   "dependencies": {
     "body-parser": "^1.14.0",
     "express": "~3.2.4",
