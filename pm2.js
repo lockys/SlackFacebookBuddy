@@ -8,7 +8,7 @@ pm2.connect(function(err) {
     throw new Error('pm2 connect error.');
   }
 
-  // Re-start the instance every 30 minutes.
+  // Re-start the instance every 1hr.
   restartInstance();
 });
 
