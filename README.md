@@ -33,7 +33,7 @@ module.exports = {
 `account` your robot's account and password.    
 `router` specify router so that slack could post request to your `post url`.    
 `threadID` every chatroom will have a thread id.  
-`nameList` just a slack-id to facebook name mapping so that people in chatroom could know who is talking.
+`nameList` A slack-id to facebook name mapping so that people in chatroom could know who is talking.
 
 **An example of router**
 ```javascript
