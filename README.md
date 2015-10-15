@@ -1,17 +1,16 @@
-slackbot
-==
 What is this?
 ==
 A program that can transmit messenges of slack to Facebook.
 
-credential.js example
+**Set up credential.js**
 ```javascript
 module.exports = {
   account: {id: 'facebook-account', pwd: 'password',},
-  router: {yourPath: '/yourPath'},
-  threadID: {group1: 0000001},
+  router: {toAll: '/toAll', toOffice: '/toOffice'},
+  threadID: {officeGroup: groupThreadID(Number), allGroup: allThreadID(Number)},
   nameList: {
-    'slackbot': '機器人',
+    'slackbot': 'display-name-in-facebook',
+    'lockys': 'Calvin Jeng',
   },
 };
 ```
