@@ -37,13 +37,13 @@ buddy.startBot();
 // re-login every 1 hr.
 buddy.setLoginTimeOut(3600000);
 ```
-**options**  
+**About `options` variable**  
 `account` Your robot's account and password.    
 `router` Specify router so that slack could post request to your `post url`.    
 `threadID` Every chatroom will have a thread id.  
 `nameList` A slack-id to facebook name mapping so that people in chatroom could know who is talking.
 
-**Run**  
+**Run bot!**  
 (Optional) You can use `pm2` module to manage process.
 ```shell
 $ pm2 start index.js
