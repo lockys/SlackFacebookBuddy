@@ -1,9 +1,9 @@
 {
-  "name": "slack-to-facebook-bot",
+  "name": "SlackFacebookBuddy",
   "version": "0.0.1",
   "description": "A bot that help send messages between Facebook and Slack optionally",
   "main": "index.js",
-  "repository": "https://github.com/lockys/slack-to-facebook-bot",
+  "repository": "https://github.com/lockys/SlackFacebookBuddy",
   "author": "Calvin Jeng",
   "dependencies": {
     "body-parser": "^1.14.0",
