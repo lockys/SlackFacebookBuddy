@@ -14,46 +14,35 @@ An example of `post url` according to your host:
 
 **Installation on your server**  
 ```shell
-$ npm install
-$ pm2 start index.js --name slack-to-facebook # Use pm2 to manage process.
-$ node pm2.js # restart server every 1hr (optional)
+$ npm i slack-facebook-buddy
 ```
 
-##Set up credential.js
+**An example**
 ```javascript
-module.exports = {
-  account: {id: 'facebook-account', pwd: 'password',},
-  router: {toAll: '/toAll', toOffice: '/toOffice'},
-  threadID: {allGroup: allThreadID(Number), officeGroup: groupThreadID(Number)},
+var Buddy = require('slack-facebook-buddy');
+var options = {
+  account: {id: 'facebook_account', pwd: 'password'},
+  router: {groupRouter: '/totest', group2Router: '/totest2'},
+  threadID: {groupID: 123355678, group2ID: 123444444},
   nameList: {
-    'slackbot': 'display-name-in-facebook',
-    'lockys': 'Calvin Jeng',
+    lockys: 'HAO-WEI',
+    buddy: 'Good Friend',
   },
 };
+
+var buddy = new Buddy(options);
+buddy.login();
+buddy.setRoute(options.router.groupRouter, options.threadID.groupID);
+buddy.setRoute(options.router.group2Router, options.threadID.group2ID);
+buddy.startBot();
+buddy.setLoginTimeOut(3600000); // re-login every 1 hr.
 ```
+**Options**  
 `account` Your robot's account and password.    
 `router` Specify router so that slack could post request to your `post url`.    
 `threadID` Every chatroom will have a thread id.  
 `nameList` A slack-id to facebook name mapping so that people in chatroom could know who is talking.
 
-**An example of router**
-```javascript
-router.post(credential.router.toAll, function(req, res) {
-  var slackBody = req.body;
-  var user = slackBody.user_name;
-  var text = slackBody.text;
-
-  console.log(user, text);
-  user = credential.nameList[user] || user;
-  var groupThreadID = credential.threadID.allGroup;
-  var msg = {body: user + ' says: ' + text.replace(delimeter , '')};
-
-  if (user !== 'slackbot') {
-    apiInstance.sendMessage(msg, groupThreadID);
-  }
-});
-```
-Replace `credential.router.toAll` and `credential.threadID.allGroup` base on your credential.js file. 
 LICENSE
 ==
 ![](https://img.shields.io/dub/l/vibe-d.svg)

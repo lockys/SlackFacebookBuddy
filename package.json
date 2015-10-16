@@ -1,5 +1,5 @@
 {
-  "name": "SlackFacebookBuddy",
+  "name": "slack-facebook-buddy",
   "version": "0.0.1",
   "description": "A bot that help send messages between Facebook and Slack optionally",
   "main": "index.js",
