@@ -5,6 +5,11 @@ You can run this on [`c9.io`](http://c9.io)
 ![](https://dl.dropboxusercontent.com/u/16975922/capture.gif)
 
 ## Getting started
+**Create bot account**  
+1. Register a new facebook account as robot.   
+2. Add robot you created to an exsisting chatroom, get `thread_id` of that chatroom on the url by clicking `Option->See Full Conversation`.  
+The URL will like this -> `https://www.facebook.com/messages/conversation-<thread_id>`  
+3. Record the `thread_id` as we will need it after. 
 
 **Installation on your server**  
 ```shell
@@ -50,13 +55,11 @@ $ pm2 start index.js
 # or just
 $ node index.js
 ```
-**You need to configure channel setting of Slack**  
-1. Register a new facebook account as robot.   
-2. Create a facebook chatroom and add robot you created to this chatroom, get `thread_id` on the url by clicking `Option->See Full Conversation`.  
-The URL will like this -> `https://www.facebook.com/messages/conversation-<thread_id>`  
-3. Set outgoing webhook with trigger word `fb=` and your server's `post url` in your channel setting.
-An example of `post url` according to your host:
-`http://example.io/totest`
+**You need to configure channel setting of Slack to make bot receive post req from Slack**  
+1. Open out-going webhook setting of your channel in integration panel.  
+2. Set `fb=` as trigger word.  
+3. Set your server's `post url` in url field.  
+An example of `post url` according to your host: `http://example.io/totest`
 
 LICENSE
 ==
