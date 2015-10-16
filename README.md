@@ -43,6 +43,13 @@ buddy.setLoginTimeOut(3600000);
 `threadID` Every chatroom will have a thread id.  
 `nameList` A slack-id to facebook name mapping so that people in chatroom could know who is talking.
 
+**Run**  
+(Optional) You can use `pm2` module to manage process.
+```shell
+$ pm2 start index.js
+# or just
+$ node index.js
+```
 **You need to configure channel setting of Slack**  
 1. Register a new facebook account as robot.   
 2. Create a facebook chatroom and add robot you created to this chatroom, get `thread_id` on the url by clicking `Option->See Full Conversation`.  
