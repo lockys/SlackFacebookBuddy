@@ -7,7 +7,7 @@ You can run this on [`c9.io`](http://c9.io)
 **Configure channel of Slack**  
 1. Register a new facebook account as robot.   
 2. Create a facebook chatroom and add robot you created to this chatroom, get `thread_id` on the url by clicking `Option->See Full Conversation`.  
-The URL will like this -> ![](https://dl.dropboxusercontent.com/u/16975922/Screen%20Shot%202015-10-16%20at%2013.05.48.png)  
+The URL will like this -> `https://www.facebook.com/messages/conversation-<thread_id>`
 3. Set outgoing webhook with trigger word `fb=` and your server's `post url` in your channel setting.
 An example of `post url` according to your host:
 `http://example.io/toAll`
