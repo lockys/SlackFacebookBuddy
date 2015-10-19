@@ -1,5 +1,6 @@
 What is this?
 ==
+[![NPM](https://nodei.co/npm/slack-facebook-buddy.png)](https://nodei.co/npm/slack-facebook-buddy/)  
 A program that can transmit messenges in slack to Facebook.  
 You can run this on [`c9.io`](http://c9.io)
 ![](https://dl.dropboxusercontent.com/u/16975922/capture.gif)
