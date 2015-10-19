@@ -62,6 +62,7 @@ $ node index.js
 2. Set `fb=` as trigger word.  
 3. Set your server's `post url` in url field.  
 An example of `post url` according to your host: `http://example.io/totest`
+![](https://dl.dropboxusercontent.com/u/16975922/instruction.gif)
 
 LICENSE
 ==
