@@ -9,7 +9,7 @@ You can run this on [`c9.io`](http://c9.io)
 1. Register a new facebook account as robot.   
 2. Add robot you created to an exsisting chatroom, get `thread_id` of that chatroom on the url by clicking `Option->See Full Conversation`.  
 The URL will like this -> `https://www.facebook.com/messages/conversation-<thread_id>`  
-3. Record the `thread_id` as we will need it after. 
+3. Record the `thread_id` as we will need it after.
 
 **Installation on your server**  
 ```shell
@@ -28,6 +28,7 @@ var options = {
     lockys: 'HAO-WEI',
     buddy: 'Good Friend',
   },
+  delimeter: 'fb=', // Note that delimeter must equals to trigger word.
 };
 
 var buddy = new Buddy(options);
